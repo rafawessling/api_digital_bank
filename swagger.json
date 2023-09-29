@@ -54,26 +54,26 @@
               "type": "object",
               "properties": {
                 "name": {
-                  "example": "Joana da Silva"
+                  "example": "string"
                 },
                 "cpf": {
                   "type": "string",
-                  "example": "666.777.888-99"
+                  "example": "string"
                 },
                 "birth": {
                   "type": "string",
-                  "example": "1990-10-12"
+                  "example": "string"
                 },
                 "phoneNumber": {
                   "type": "string",
-                  "example": "(41)999887766"
+                  "example": "string"
                 },
                 "email": {
-                  "example": "joana@email.com"
+                  "example": "string"
                 },
                 "password": {
                   "type": "string",
-                  "example": "abc123"
+                  "example": "string"
                 }
               }
             }
@@ -114,10 +114,10 @@
               "properties": {
                 "phoneNumber": {
                   "type": "string",
-                  "example": "(46)999887766"
+                  "example": "string"
                 },
                 "email": {
-                  "example": "joana.silva@email.com"
+                  "example": "string"
                 }
               }
             }
@@ -256,10 +256,10 @@
               "properties": {
                 "accountNumber": {
                   "type": "string",
-                  "example": "2"
+                  "example": "string"
                 },
                 "amount": {
-                  "example": "100"
+                  "example": "integer"
                 }
               }
             }
@@ -300,14 +300,14 @@
               "properties": {
                 "accountNumber": {
                   "type": "string",
-                  "example": "2"
+                  "example": "string"
                 },
                 "amount": {
-                  "example": "50"
+                  "example": "integer"
                 },
                 "password": {
                   "type": "string",
-                  "example": "abc123"
+                  "example": "string"
                 }
               }
             }
@@ -348,18 +348,18 @@
               "properties": {
                 "senderAccountNumber": {
                   "type": "string",
-                  "example": "2"
+                  "example": "string"
                 },
                 "recipientAccountNumber": {
                   "type": "string",
-                  "example": "1"
+                  "example": "string"
                 },
                 "amount": {
-                  "example": "20"
+                  "example": "integer"
                 },
                 "password": {
                   "type": "string",
-                  "example": "abc123"
+                  "example": "string"
                 }
               }
             }

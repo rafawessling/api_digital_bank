@@ -5,20 +5,7 @@
         "agency": "0001",
         "password": "Cubos123Bank"
     },
-    "accounts": [
-        {
-            "number": "1",
-            "balance": 0,
-            "user": {
-                "name": "Foo Bar 3",
-                "cpf": "77788899900",
-                "birth": "2000-07-05",
-                "phoneNumber": "71999333547",
-                "email": "foobar3@email.com",
-                "password": "12345"
-            }
-        }
-    ],
+    "accounts": [],
     "withdrawals": [],
     "deposits": [],
     "transfers": []
