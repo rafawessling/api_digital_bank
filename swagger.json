@@ -1,0 +1,388 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Cubos Bank",
+    "description": ""
+  },
+  "host": "localhost:3333",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "tags": [
+    "Teste"
+  ],
+  "paths": {
+    "/accounts": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Get a list of accounts",
+        "description": "**Requirements:**\n\n- `bankPassword`: Must contain the bank password",
+        "parameters": [
+          {
+            "name": "bankPassword",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Register a new account",
+        "description": "**Requirements:**\n\n- `name`: Must contain the user name\n- `cpf`: Must contain the user cpf\n- `birth`: Must contain the user birth\n- `phoneNumber`: Must contain the user phone number\n- `email`: Must contain the user email\n- `password`: Must contain the user password",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "Joana da Silva"
+                },
+                "cpf": {
+                  "type": "string",
+                  "example": "666.777.888-99"
+                },
+                "birth": {
+                  "type": "string",
+                  "example": "1990-10-12"
+                },
+                "phoneNumber": {
+                  "type": "string",
+                  "example": "(41)999887766"
+                },
+                "email": {
+                  "example": "joana@email.com"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "abc123"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/accounts/{accountNumber}/user": {
+      "put": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Update a specific account",
+        "description": "**Requirements:**\n\n- `accountNumber`: Must contain the account number\n- `name`: Optionally, it can contain the user name to update it\n- `cpf`: Optionally, it can contain the user cpf to update it\n- `birth`: Optionally, it can contain the user birth to update it\n- `phoneNumber`: Optionally, it can contain the user phone number to update it\n- `email`: Optionally, it can contain the user email to update it\n- `password`: Optionally, it can contain the user password to update it\n\n*To update the user, you must enter at least one field.*",
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "phoneNumber": {
+                  "type": "string",
+                  "example": "(46)999887766"
+                },
+                "email": {
+                  "example": "joana.silva@email.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/accounts/{accountNumber}": {
+      "delete": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Delete a specific account",
+        "description": "**Requirements:**\n\n- `accountNumber`: Must contain the account number",
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/accounts/balance": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Get the balance of a specific account",
+        "description": "**Requirements:**\n\n- `accountNumber`: Must contain the account number\n- `password`: Must contain the user password",
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/accounts/receipt": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Get the receipt of a specific account",
+        "description": "**Requirements:**\n\n- `accountNumber`: Must contain the account number\n- `password`: Must contain the user password",
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/transactions/deposit": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Register a deposit to a specific account",
+        "description": "**Requirements:**\n\n- `accountNumber`: Must contain the account number\n- `amount`: Must contain the amount to deposit",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "accountNumber": {
+                  "type": "string",
+                  "example": "2"
+                },
+                "amount": {
+                  "example": "100"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/transactions/withdrawal": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Register a withdrawal from a specific account",
+        "description": "**Requirements:**\n\n- `accountNumber`: Must contain the account number\n- `amount`: Must contain the amount to withdrawal\n- `password`: Must contain the user password",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "accountNumber": {
+                  "type": "string",
+                  "example": "2"
+                },
+                "amount": {
+                  "example": "50"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "abc123"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/transactions/transfer": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Register a transfer between two accounts",
+        "description": "**Requirements:**\n\n- `senderAccountNumber`: Must contain the sender account number\n- `recipientAccountNumber`: Must contain the recipient account number\n- `amount`: Must contain the amount to transfer\n- `password`: Must contain the sender password",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "senderAccountNumber": {
+                  "type": "string",
+                  "example": "2"
+                },
+                "recipientAccountNumber": {
+                  "type": "string",
+                  "example": "1"
+                },
+                "amount": {
+                  "example": "20"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "abc123"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
