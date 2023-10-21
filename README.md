@@ -24,6 +24,8 @@
 
 > This project consists of developing a RestAPI of a digital bank using _JavaScript, Node.js, and Swagger_.
 
+-   The project is available on this <a href="https://cubos-bank.cyclic.app/docs/" target="_blank">link</a>.
+
 > To get started, register a new account. All CRUD options are available, so it is possible to list, update, and delete accounts. In addition, make transactions, get the balance, and get the receipt.
 
 ##
