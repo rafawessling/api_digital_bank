@@ -25,6 +25,6 @@ routes.post('/transactions/withdrawal', registerWithdrawal);
 routes.post('/transactions/transfer', registerTransfer);
 routes.get('/accounts/balance', getBalance);
 routes.get('/accounts/receipt', getReceipt);
-routes.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+routes.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 export default routes;
