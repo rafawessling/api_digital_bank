@@ -4,7 +4,12 @@ import cors from 'cors';
 
 const app = express();
 
-app.use(cors());
+app.use(
+    cors({
+        origin: 'https://cubos-bank.cyclic.app/docs/',
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    })
+);
 
 app.use(json());
 
