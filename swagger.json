@@ -5,7 +5,7 @@
     "title": "Cubos Bank",
     "description": ""
   },
-  "host": "cubos-bank.cyclic.app/docs",
+  "host": "cubos-bank.cyclic.app",
   "basePath": "/",
   "schemes": [
     "http"
