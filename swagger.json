@@ -5,7 +5,7 @@
     "title": "Cubos Bank",
     "description": ""
   },
-  "host": "localhost:3333",
+  "host": "cubos-bank.cyclic.app/docs",
   "basePath": "/",
   "schemes": [
     "http"
