@@ -6,7 +6,7 @@ const app = express();
 
 app.use(
     cors({
-        origin: 'https://cubos-bank.cyclic.app/docs/',
+        origin: 'cubos-bank.cyclic.app/docs/',
         methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     })
 );
